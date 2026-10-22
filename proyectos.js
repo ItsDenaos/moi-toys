@@ -52,7 +52,7 @@ window.PROYECTOS = [
     imagen: "img/lumos.jpg",
     emoji: "🌗",
     demo: "https://lumos-game.netlify.app/",
-    codigo: "", // el repositorio no es público; poner "https://github.com/ItsDenaos/lumos" si se publica
+    codigo: "https://github.com/ItsDenaos/lumos",
   },
   {
     titulo: "GeoRetos",
@@ -83,7 +83,7 @@ window.PROYECTOS = [
     imagen: "img/gobierno.jpg",
     emoji: "🏛️",
     demo: "https://simulador-de-gobierno.netlify.app/",
-    codigo: "", // el repositorio no es público; poner "https://github.com/ItsDenaos/gobierno-sim" si se publica
+    codigo: "https://github.com/ItsDenaos/gobierno-sim",
   },
   {
     titulo: "Papel Minado",

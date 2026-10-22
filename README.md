@@ -80,9 +80,9 @@ animado), así que no hace falta webcam.
 
 ## Código de los proyectos
 
-El botón "Código" solo aparece si el proyecto tiene `codigo`. Lumos y Simulador de Gobierno
-no lo tienen porque sus repositorios no son públicos (GitHub da 404): si se publican, basta
-con poner el enlace que está anotado al lado en `proyectos.js`.
+El botón "Código" aparece en todos los proyectos que tienen `codigo`, sea el repositorio
+público o privado: la página no le pregunta nada a GitHub. Si el repositorio es privado
+(hoy Lumos y Simulador de Gobierno), quien no tenga acceso verá un 404 de GitHub al abrirlo.
 
 ## Publicar en Netlify
 
