@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moi Toys</title>
+  <meta name="description" content="Moi Toys: la caja de juguetes de Moisés. Webs, apps web y juegos web.">
+  <meta name="theme-color" content="#ff5a36">
+  <!-- Vista previa al compartir el enlace -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Moi Toys">
+  <meta property="og:title" content="Moi Toys · Juguetería digital">
+  <meta property="og:description" content="La caja de juguetes de Moisés: webs, apps y juegos web hechos a mano. Escoge uno y disfruta.">
+  <meta property="og:locale" content="es_CO">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Barlow+Condensed:wght@600;700&family=Nunito:wght@500;700;800&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="tema.js"></script>
+</head>
+<body>
+  <!-- Llave de cuerda: el símbolo de Moi Toys -->
+  <svg class="simbolos" width="0" height="0" aria-hidden="true">
+    <symbol id="llave" viewBox="0 0 64 64">
+      <g fill="currentColor" stroke="currentColor">
+        <circle cx="18" cy="19" r="10" fill="none" stroke-width="7"/>
+        <circle cx="46" cy="19" r="10" fill="none" stroke-width="7"/>
+        <rect x="26" y="11" width="12" height="26" rx="4" stroke="none"/>
+        <rect x="23" y="35" width="18" height="6" rx="2" stroke="none"/>
+        <rect x="28.5" y="40" width="7" height="18" rx="2.5" stroke="none"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <div class="toldo" aria-hidden="true"></div>
+
+  <header class="barra">
+    <a class="marca" href="#" aria-label="Moi Toys, inicio">
+      <span class="marca-llave" aria-hidden="true"><svg><use href="#llave"/></svg></span>
+      <span class="marca-texto">Moi Toys</span>
+    </a>
+    <nav class="barra-acciones" aria-label="Principal">
+      <a class="barra-enlace" href="#estanteria">Estantería</a>
+      <a id="enlace-github" class="boton-icono" href="#" target="_blank" rel="noopener" aria-label="GitHub de Denaos" title="GitHub">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+      </a>
+      <button id="boton-tema" class="boton-icono" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">
+        <span class="icono-sol" aria-hidden="true">☀️</span>
+        <span class="icono-luna" aria-hidden="true">🌙</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ---------- Portada ---------- -->
+    <section class="portada">
+      <div class="portada-texto">
+        <p class="etiqueta-precio">Juguetería digital · Colección <span class="anio"></span></p>
+
+        <h1 class="logotipo" aria-label="Moi Toys">
+          <span class="logo-moi" aria-hidden="true"><span>M</span><span>o</span><span>i</span><svg class="logo-llave"><use href="#llave"/></svg></span>
+          <span class="logo-cinta" aria-hidden="true"><span>TOYS</span></span>
+        </h1>
+
+        <p class="subtitulo">La caja de juguetes de Moisés: webs, apps y juegos que hago por gusto. Escoge uno y disfruta.</p>
+        <p id="contador" class="contador"></p>
+        <a class="boton-grande" href="#estanteria">Ver la estantería <span aria-hidden="true">↓</span></a>
+      </div>
+
+      <div class="maquina-zona">
+        <div class="cartel-hueco">
+          <div class="maquina-cartel">
+            <p id="cartel-pregunta" class="cartel-pregunta">¿No sabes cuál?<br><strong>¡Dale una vuelta!</strong></p>
+            <div id="premio-tarjeta" class="cartel-premio" hidden>
+              <p class="premio-te-salio">¡Te salió!</p>
+              <p class="premio-nombre"><span id="premio-emoji" class="premio-emoji" aria-hidden="true"></span><span id="premio-nombre"></span></p>
+              <button id="premio-ver" class="premio-ver" type="button">Ver en la estantería</button>
+            </div>
+          </div>
+        </div>
+        <div class="maquina">
+          <svg class="maquina-svg" viewBox="0 0 300 420" aria-hidden="true">
+            <!-- Patas y cuerpo -->
+            <rect x="62" y="384" width="40" height="18" rx="5" class="tinta"/>
+            <rect x="198" y="384" width="40" height="18" rx="5" class="tinta"/>
+            <rect x="48" y="246" width="204" height="146" rx="20" class="cuerpo"/>
+            <!-- Cúpula -->
+            <circle cx="150" cy="132" r="112" class="vidrio"/>
+            <g id="capsulas" class="capsulas"></g>
+            <path d="M74 92 A86 86 0 0 1 128 50" class="brillo"/>
+            <path d="M66 118 A86 86 0 0 1 70 104" class="brillo"/>
+            <circle cx="150" cy="132" r="112" class="vidrio-borde"/>
+            <!-- Collar y placa -->
+            <rect x="34" y="226" width="232" height="32" rx="13" class="collar"/>
+            <rect x="80" y="268" width="140" height="26" rx="7" class="placa"/>
+            <text x="150" y="287" text-anchor="middle" class="placa-texto">MOI TOYS</text>
+            <!-- Perilla -->
+            <g id="perilla" class="perilla">
+              <circle cx="150" cy="330" r="30" class="perilla-disco"/>
+              <rect x="124" y="322" width="52" height="16" rx="8" class="tinta"/>
+              <circle cx="150" cy="330" r="5" class="perilla-centro"/>
+            </g>
+            <!-- Salida -->
+            <rect x="196" y="350" width="44" height="30" rx="8" class="tinta"/>
+            <rect x="200" y="354" width="36" height="12" rx="4" class="compuerta"/>
+            <!-- Cápsula premio -->
+            <g id="premio" class="premio">
+              <g class="premio-tapa"><path d="M-17 0 A17 17 0 0 1 17 0 Z" class="premio-color"/></g>
+              <path d="M-17 0 A17 17 0 0 0 17 0 Z" class="premio-base"/>
+              <line x1="-17" y1="0" x2="17" y2="0" class="premio-linea"/>
+            </g>
+          </svg>
+          <button class="perilla-boton" type="button" tabindex="-1" aria-hidden="true" data-girar></button>
+        </div>
+
+        <button class="boton-girar" type="button" data-girar>Girar la perilla</button>
+        <p id="anuncio" class="visualmente-oculto" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ---------- Cinta de anuncios ---------- -->
+    <div class="cinta-marco" aria-hidden="true">
+      <div class="cinta">
+        <div id="cinta-pista" class="cinta-pista"></div>
+      </div>
+    </div>
+
+    <!-- ---------- Estantería ---------- -->
+    <section id="estanteria" class="estanteria" aria-labelledby="titulo-estanteria">
+      <div class="estanteria-cabecera">
+        <div class="cartel-pasillo">
+          <span class="cartel-kicker">Pasillo 1</span>
+          <h2 id="titulo-estanteria">La estantería</h2>
+        </div>
+        <label class="buscador">
+          <span class="visualmente-oculto">Buscar juguete</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Zm5.4-2.1L21 21"/></svg>
+          <input id="buscar" type="search" placeholder="Busca un juguete o una tecnología…" autocomplete="off">
+        </label>
+      </div>
+
+      <div id="filtros" class="filtros" role="group" aria-label="Filtrar por tipo"></div>
+
+      <ul id="grilla" class="grilla"></ul>
+
+      <div id="vacio" class="vacio" hidden>
+        <svg class="vacio-llave" aria-hidden="true"><use href="#llave"/></svg>
+        <p><strong>Este pasillo está vacío.</strong><br>No hay juguetes con ese nombre; prueba con otra búsqueda.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie-caja">
+      <svg id="codigo-barras" class="codigo-barras" aria-hidden="true"></svg>
+      <div>
+        <p class="pie-marca">Moi Toys · Juguetería digital</p>
+        <p>Hecho con cariño por <strong>Denaos</strong> · <span class="anio"></span></p>
+        <p class="pie-letra-chica">Pilas no incluidas. Algunos juguetes funcionan sin internet.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="proyectos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
