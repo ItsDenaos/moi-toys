@@ -49,7 +49,7 @@ Abrir `proyectos.js`, copiar uno de los bloques `{ ... }` y cambiar sus datos:
   ficha: "1 jugador · celular",      // opcional: datos cortos del empaque
   sello: "¡Nuevo!",                  // opcional: texto de la estrella (corto)
   estado: "en-desarrollo",           // o "publicado"
-  color: "chicle",                   // tomate, naranja, sol, lima, menta, cobalto, uva o chicle
+  color: "chicle",                   // tomate, naranja, sol, lima, menta, cielo, cobalto, uva o chicle
   imagen: "img/mi-juego.jpg",        // opcional: captura (mejor en 16:10)
   emoji: "🎮",                       // cápsula de la máquina (y portada si no hay imagen)
   demo: "https://mi-juego.netlify.app",
@@ -67,20 +67,22 @@ Abrir `proyectos.js`, copiar uno de los bloques `{ ... }` y cambiar sus datos:
 Las capturas de `img/` se sacan solas con:
 
 ```bash
-node scripts/capturas.cjs
+node scripts/capturas.cjs                      # todas
+node scripts/capturas.cjs camaleon ghostreel   # solo esas
 ```
 
 El script abre la versión compilada de cada proyecto (su carpeta `dist`, `.output/public`,
 etc., junto a esta carpeta en Documentos) y guarda `img/<id>.jpg` a 1024×640. Usa el
 Playwright que ya está instalado en `pdf-kingdom`. Para un proyecto nuevo, agregarlo a la
 lista `PROYECTOS` del script. Conviene compilar cada proyecto antes, para que la captura
-muestre la última versión.
+muestre la última versión. Camaleón usa la cámara de prueba de Chromium (un patrón verde
+animado), así que no hace falta webcam.
 
-## Pendiente
+## Código de los proyectos
 
-Leyenda, Lumos, GeoRetos, Simulador de Gobierno, Papel Minado, PDF Kingdom, Pa' Donde y
-Ghostreel ya están en la lista, pero falta poner en `demo` el enlace de cada uno cuando
-estén publicados.
+El botón "Código" solo aparece si el proyecto tiene `codigo`. Lumos y Simulador de Gobierno
+no lo tienen porque sus repositorios no son públicos (GitHub da 404): si se publican, basta
+con poner el enlace que está anotado al lado en `proyectos.js`.
 
 ## Publicar en Netlify
 

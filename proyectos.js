@@ -12,7 +12,7 @@
  *   ficha        (opcional) Datos cortos del empaque, ej. "2 jugadores · teclado".
  *   sello        (opcional) Texto de la estrella pegada en el empaque, ej. "¡Para 2!". Corto.
  *   estado       "publicado" | "en-desarrollo"
- *   color        Color del empaque: "tomate" | "naranja" | "sol" | "lima" | "menta" | "cobalto" | "uva" | "chicle"
+ *   color        Color del empaque: "tomate" | "naranja" | "sol" | "lima" | "menta" | "cielo" | "cobalto" | "uva" | "chicle"
  *                (o cualquier color CSS, ej. "#ff5a36").
  *   imagen       (opcional) Captura del proyecto, ej. "img/leyenda.jpg" (mejor en 16:10).
  *   emoji        Dibujo de la cápsula de la máquina (y de la portada si no hay imagen).
@@ -34,7 +34,7 @@ window.PROYECTOS = [
     color: "sol",
     imagen: "img/leyenda.jpg",
     emoji: "⚽",
-    demo: "",
+    demo: "https://leyenda-futbol.netlify.app/",
     codigo: "https://github.com/ItsDenaos/Leyenda",
     destacado: true,
   },
@@ -51,8 +51,8 @@ window.PROYECTOS = [
     color: "uva",
     imagen: "img/lumos.jpg",
     emoji: "🌗",
-    demo: "",
-    codigo: "https://github.com/ItsDenaos/lumos",
+    demo: "https://lumos-game.netlify.app/",
+    codigo: "", // el repositorio no es público; poner "https://github.com/ItsDenaos/lumos" si se publica
   },
   {
     titulo: "GeoRetos",
@@ -67,7 +67,7 @@ window.PROYECTOS = [
     color: "cobalto",
     imagen: "img/georetos.jpg",
     emoji: "🌎",
-    demo: "",
+    demo: "https://georetos.netlify.app/",
     codigo: "https://github.com/ItsDenaos/georetos",
   },
   {
@@ -82,8 +82,8 @@ window.PROYECTOS = [
     color: "menta",
     imagen: "img/gobierno.jpg",
     emoji: "🏛️",
-    demo: "",
-    codigo: "https://github.com/ItsDenaos/gobierno-sim",
+    demo: "https://simulador-de-gobierno.netlify.app/",
+    codigo: "", // el repositorio no es público; poner "https://github.com/ItsDenaos/gobierno-sim" si se publica
   },
   {
     titulo: "Papel Minado",
@@ -98,7 +98,7 @@ window.PROYECTOS = [
     color: "chicle",
     imagen: "img/papel-minado.jpg",
     emoji: "💣",
-    demo: "",
+    demo: "https://papel-minado.netlify.app/",
     codigo: "https://github.com/ItsDenaos/papel-minado",
   },
   {
@@ -113,7 +113,7 @@ window.PROYECTOS = [
     color: "tomate",
     imagen: "img/pdf-kingdom.jpg",
     emoji: "👑",
-    demo: "",
+    demo: "https://pdf-kingdom.netlify.app/",
     codigo: "https://github.com/ItsDenaos/pdf-kingdom",
   },
   {
@@ -129,7 +129,7 @@ window.PROYECTOS = [
     color: "naranja",
     imagen: "img/pa-donde.jpg",
     emoji: "🚌",
-    demo: "",
+    demo: "https://pa-donde.netlify.app/",
     codigo: "https://github.com/ItsDenaos/pa-donde",
   },
   {
@@ -145,8 +145,24 @@ window.PROYECTOS = [
     color: "lima",
     imagen: "img/ghostreel.jpg",
     emoji: "👻",
-    demo: "",
+    demo: "https://ghostreel.netlify.app/",
     codigo: "https://github.com/ItsDenaos/ghostreel",
+  },
+  {
+    titulo: "Camaleón",
+    subtitulo: "Efectos para tu webcam",
+    categoria: "app",
+    descripcion:
+      "Efectos en tiempo real para tu webcam: 26 efectos encadenables, fondos y filtros de cara con IA, fotos, fotomatón, GIF, boomerang y video. Todo se procesa en el navegador; nada se sube a ningún servidor.",
+    tecnologias: ["Preact", "TypeScript", "WebGL2", "MediaPipe", "PWA"],
+    ficha: "Foto, fotomatón, GIF y video",
+    sello: "¡26 efectos!",
+    estado: "publicado",
+    color: "cielo",
+    imagen: "img/camaleon.jpg",
+    emoji: "🦎",
+    demo: "https://camaleon-cam.netlify.app/",
+    codigo: "https://github.com/ItsDenaos/camaleon",
   },
 ];
 

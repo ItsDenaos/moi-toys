@@ -54,6 +54,20 @@ const PROYECTOS = [
       await page.waitForTimeout(500);
     },
   },
+  // Usa la cámara de prueba de Chromium (un patrón animado) en vez de una webcam real.
+  {
+    id: "camaleon",
+    dir: "camaleon/dist",
+    permisos: ["camera", "microphone"],
+    // Abre la galería de efectos y pasa a la página 2 (negativo, ASCII, cómic, VHS,
+    // glitch, térmico…), la que más se luce con el patrón verde de la cámara de prueba.
+    antes: async (page) => {
+      await page.mouse.click(84, 592);
+      await page.waitForTimeout(2000);
+      await page.mouse.click(572, 605);
+      await page.waitForTimeout(2500);
+    },
+  },
 ];
 
 const MIME = {
@@ -83,7 +97,10 @@ function servir(dir) {
 (async () => {
   const salida = path.join(RAIZ, "img");
   fs.mkdirSync(salida, { recursive: true });
-  const browser = await chromium.launch();
+  // Cámara y micrófono falsos, sin pedir permiso (solo los usa quien tenga "permisos").
+  const browser = await chromium.launch({
+    args: ["--use-fake-ui-for-media-stream", "--use-fake-device-for-media-stream"],
+  });
   for (const p of PROYECTOS) {
     if (soloEstos.length && !soloEstos.includes(p.id)) continue;
     const dir = path.join(DOCS, p.dir);
@@ -96,6 +113,7 @@ function servir(dir) {
       viewport: { width: 1024, height: 640 },
       locale: "es-CO",
       serviceWorkers: "block",
+      permissions: p.permisos || [],
     });
     const page = await ctx.newPage();
     try {

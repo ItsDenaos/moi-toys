@@ -16,13 +16,14 @@
     sol:     ["#ffc83d", TINTA],
     lima:    ["#9be03c", TINTA],
     menta:   ["#1fb89a", TINTA],
+    cielo:   ["#45c4f2", TINTA],
     cobalto: ["#3158f0", "#ffffff"],
     uva:     ["#7a4fe0", "#ffffff"],
     chicle:  ["#ff6fae", TINTA],
   };
-  var ORDEN_PALETA = ["tomate", "sol", "cobalto", "menta", "uva", "naranja", "chicle", "lima"];
+  var ORDEN_PALETA = ["tomate", "sol", "cobalto", "menta", "uva", "naranja", "chicle", "lima", "cielo"];
   // Colores de los sellos: siempre distintos del empaque.
-  var SELLO_PARA = { sol: "chicle", naranja: "sol", tomate: "sol", lima: "chicle", menta: "sol", cobalto: "sol", uva: "sol", chicle: "sol" };
+  var SELLO_PARA = { sol: "chicle", naranja: "sol", tomate: "sol", lima: "chicle", menta: "sol", cielo: "sol", cobalto: "sol", uva: "sol", chicle: "sol" };
   // Inclinaciones para que la estantería no se vea de catálogo.
   var INCLINACIONES = [-1.2, 0.8, -0.4, 1.1, -0.9, 0.5];
 
